@@ -1,0 +1,16 @@
+-r common.txt
+# Debug
+# https://github.com/microsoft/debugpy#debugpy-import-usage
+debugpy==1.6.7
+# https://django-debug-toolbar.readthedocs.io/en/latest/installation.html
+django-debug-toolbar==4.1.0
+
+
+
+# For jupiter
+django-extensions==3.2.3
+ipykernel==6.24.0
+ipython==8.8.0
+jupyter==1.0.0
+notebook==6.5.2
+psutil==5.9.4
