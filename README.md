@@ -33,10 +33,13 @@ If additional commands are needed when building the image, use the file [entrypo
 
 ## Python debugging (in VS Code shell):
 1. Option 1
-Remotely connect to the container and request debugging in the container, but this is not practical
-2. Option 2.
+
+Remotely connect to the container and request debugging in the container/
+
+2. Option 2
+
 Use the configuration for remote python connection "Jango Portal Python Debug" [launch.json](.vscode/launch.json)
-Before doing this, you need to start the containers (`docker-compose-dev.debug.yml`).
+Before doing this, you need to start the containers (`docker-compose-dev-debug.yml`).
 The difference is that extra containers have been cut in this container, only the functionality necessary for debugging.
 
 Useful [link](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_connect-to-a-remote-jupyter-server
