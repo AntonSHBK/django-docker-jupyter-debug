@@ -1,3 +1,5 @@
+<img src="imgs/logo.jpg" alt="drawing" width="1000"/>
+
 # Djando project
 This repository complete to work with django, jupyter and debugging work in container docker.
 
@@ -7,6 +9,8 @@ Includes a container with a functioning Django server and a Postgresql database 
 `docker-compose -f docker-compose-dev.yml build`
 
 `docker-compose -f docker-compose-dev.yml up`
+
+![start](imgs/portal_dev.gif)
 
 ## Development with manual debugging or using VS Code:
 Includes a container with Django north, PosgreSQL database, Jupyter server.
@@ -38,6 +42,9 @@ Remotely connect to the container and request debugging in the container/
 
 2. Option 2
 
+![start](imgs/debug.gif)
+
+
 Use the configuration for remote python connection "Jango Portal Python Debug" [launch.json](.vscode/launch.json)
 Before doing this, you need to start the containers (`docker-compose-dev-debug.yml`).
 The difference is that extra containers have been cut in this container, only the functionality necessary for debugging.
@@ -48,9 +55,9 @@ Useful [link](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_
 ## Jupyter debugging (in VS Code shell):
 1. Start the container for debugging, wait for migrations to be performed. It is absolutely necessary to run in debug mode (Python) the steps above and then a window will appear with a message about starting the server. 
 
-`docker-compose -f docker-compose-dev.debug.yml build`
+`docker-compose -f docker-compose-dev-debug.yml build`
 
-`docker-compose -f docker-compose-dev.debug.yml up`
+`docker-compose -f docker-compose-dev-debug.yml up`
 
 - if a token is used copy the URL of the jupyter server example: 
 
@@ -61,6 +68,15 @@ Useful [link](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_
 - specify the copied address previously
 - set the configuration name
 - to restart execution
+
+## Using Browser
+
+![start](imgs/jupyter_1.gif)
+
+## Using VS Code
+
+![start](imgs/jupyter_2.gif)
+
 
 ## Useful links
 
@@ -119,7 +135,10 @@ To launch in the prod:
 ## Отладка Python (в оболочке VS Code):
 1. Вариант 1
 Удалённо подлючиться  к контейнеру и запутсить отладку в контейнере, однако это не практично
-2. Вариант 2. 
+2. Вариант 2.
+
+![start](imgs/debug.gif)
+
 Использовать конфигурацию для удалённого подключения python "Jango Portal Python Debug" (.vscode/launch.json)
 Перед этим необходимо запустить контейнеры (`docker-compose-dev.debug.yml`).
 Отличие в том, что в этом контейнере урезаны лишние контейнеры,  только необходимый для отладки функционал.
@@ -143,6 +162,14 @@ To launch in the prod:
 - указать скопированный адресс ранее
 - задать имя конфигурации
 - зпустить выполнение
+
+## Используя браузер
+
+![start](imgs/jupyter_1.gif)
+
+## Используя VS Code
+
+![start](imgs/jupyter_2.gif)
 
 ## Полезные ссылки
 
