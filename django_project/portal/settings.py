@@ -33,6 +33,8 @@ INSTALLED_APPS = [
     'django.contrib.postgres', # integration with PostgreSQL  
     # https://docs.djangoproject.com/en/4.2/ref/contrib/sites/
     'django.contrib.sites',
+    # https://docs.djangoproject.com/en/4.2/ref/contrib/sitemaps/
+    'django.contrib.sitemaps',
     # https://docs.djangoproject.com/en/4.2/ref/contrib/humanize/
     'django.contrib.humanize', # tempaltes numbers and some dates
 ]
@@ -80,6 +82,9 @@ TEMPLATES = [
         },
     },
 ]
+
+# Path where locate error html pages 
+ERRORS_TAMPLATES_PATH = 'errors'
 
 WSGI_APPLICATION = 'portal.wsgi.application'
 
