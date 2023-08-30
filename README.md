@@ -6,25 +6,37 @@ This repository complete to work with django, jupyter and debugging work in cont
 ## Development: 
 Includes a container with a functioning Django server and a Postgresql database server.
 
-`docker-compose -f docker-compose-dev.yml build`
+```bash
+docker-compose -f docker-compose-dev.yml build
+```
 
-`docker-compose -f docker-compose-dev.yml up`
+```bash
+docker-compose -f docker-compose-dev.yml up
+```
 
 ![start](imgs/portal_dev.gif)
 
 ## Development with manual debugging or using VS Code:
 Includes a container with Django north, PosgreSQL database, Jupyter server.
 
-`docker-compose -f docker-compose-dev-debug.yml build`
+```bash
+docker-compose -f docker-compose-dev-debug.yml build
+```
 
-`docker-compose -f docker-compose-dev-debug.yml up`
+```bash
+docker-compose -f docker-compose-dev-debug.yml up
+```
 
 ## Production:
 Includes a Gunicorn server container, a Postgresql database and a server for reverse proxying Nginx.
 
-`docker-compose -f docker-compose-prod.yml build`
+```bash
+docker-compose -f docker-compose-prod.yml build
+```
 
-`docker-compose -f docker-compose-prod-debug.yml up`
+```bash
+docker-compose -f docker-compose-prod-debug.yml up
+```
 
 ## Explanation:
 I tried to avoid problems during the build process, however, this is not excluded, problems may arise if different versions of containers (prod, dev) are mounted on the same machine. There may also be problems due to the non-synchronous start of containers, I have provided for waiting for containers before starting, you can change this parameter (sleep 5s).
@@ -55,9 +67,13 @@ Useful [link](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_
 ## Jupyter debugging (in VS Code shell):
 1. Start the container for debugging, wait for migrations to be performed. It is absolutely necessary to run in debug mode (Python) the steps above and then a window will appear with a message about starting the server. 
 
-`docker-compose -f docker-compose-dev-debug.yml build`
+```bash
+docker-compose -f docker-compose-dev-debug.yml build
+```
 
-`docker-compose -f docker-compose-dev-debug.yml up`
+```bash
+docker-compose -f docker-compose-dev-debug.yml up
+```
 
 - if a token is used copy the URL of the jupyter server example: 
 
@@ -82,7 +98,9 @@ Useful [link](https://code.visualstudio.com/docs/datascience/jupyter-notebooks#_
 
 Connect to the app container shell:
 
-`docker exec -it django-portal-app sh`
+```bash
+docker exec -it django-portal-app sh
+```
 
 Connect to the Django portal:
 [http://127.0.0.1:8000](http://127.0.0.1:8000)
@@ -96,7 +114,9 @@ Create Superuser:
 
 View the logs of the container for catching errors:
 
-`docker-compose -f docker-compose.prod.yml logs -f`
+```bash
+docker-compose -f docker-compose.prod.yml logs -f
+```
 
 To launch in the prod:
 [http://127.0.0.1:8000](http://127.0.0.1:8000)
